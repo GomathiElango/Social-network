@@ -35,7 +35,6 @@ public class ForumDaoTest {
 	
 	@Autowired
 	SessionFactory sessionFactory;
-	
 	//@Ignore
 	@Test
 	public  void addForumTest() {
@@ -45,13 +44,15 @@ public class ForumDaoTest {
 	    forum.setForumName("forum1");
 	    forum.setUsername("AA");
 	    forum.setStatus("A");
+	   
 	    forum.setCreateDate(new java.util.Date());
 	    System.out.println("1");
+	    System.out.println(forum);
 		assertEquals("Failed to add user!",forumdao.addforum(forum));
 		System.out.println("2");
 	} 
 	
-	//@Ignore
+	@Ignore
 	@Test
 	public void getForumTest(){
 		
@@ -61,8 +62,7 @@ public class ForumDaoTest {
 		System.out.println("Forum Name:"+forum.getForumName());
 		System.out.println("Blog Content"+forum.getForumContent());
 	}
-	
-	//@Ignore
+	@Ignore
 	@Test
 	public void getAllForumTest(){
 		
@@ -76,8 +76,7 @@ public class ForumDaoTest {
 			assertTrue("Problem in Deletion", forumdao.deleteforum(forum));
 		}
 	}
-	
-	//@Ignore
+	@Ignore
 	@Test
 	public void updateForumTest(){
 	

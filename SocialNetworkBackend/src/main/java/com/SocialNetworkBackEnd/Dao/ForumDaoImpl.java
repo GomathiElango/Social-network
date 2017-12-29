@@ -11,6 +11,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.SocialNetworkBackEnd.Model.Blog;
 //import com.SocialNetworkBackEnd.Model.forum;
 import com.SocialNetworkBackEnd.Model.Forum;
 
@@ -113,9 +114,15 @@ public List<Forum> getallforums()
 	Session session=sessionfactory.openSession();
 	Transaction transaction=session.getTransaction();
 	transaction.begin();
-	String hql="from forum";
-	Query query=session.createQuery(hql);
-	return query.list();
+	Query query=session.createQuery("from Forum");
+	//System.out.println("****"+query);
+	List<Forum> fdetail=query.list();
+	
+	//List<UserDetail> userdetail=session.createQuery("from UserDetail").list();
+//	System.out.println("@@:"+userdetail);
+    
+	//session.close();
+    return fdetail;
 }
 @Transactional
 public boolean approveforum(Forum b)
@@ -163,8 +170,3 @@ public boolean rejectforum(Forum b) {
 }
 
 }
-
-
-
-
-
