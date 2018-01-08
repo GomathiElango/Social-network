@@ -10,6 +10,8 @@ myapp.config(function($routeProvider)
 			              .when("/UserDetail",{templateUrl:"User/UserDetail.html"})
 			              .when("/AdminBlog",{templateUrl:"Blog/AdminBlog.html"})
 			              .when("/AdminForum",{templateUrl:"Forum/AdminForum.html"})
+			               .when("/JobAdd",{templateUrl:"Job/JobAdd.html"})
+			              .when("/ShowAdd",{templateUrl:"Job/ShowAdd.html"})
 		});
 
 

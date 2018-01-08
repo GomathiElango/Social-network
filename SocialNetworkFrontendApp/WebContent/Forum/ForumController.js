@@ -2,7 +2,7 @@ myapp.controller("ForumController",function($scope,$http)
 {
 	$scope.Forum={ForumId:"",UserId:"",forumName:"",forumContent:"",username:"",status:"",createDate:""};
 	
-	$http.get("http://localhost:8081/SocialNetworkRestApp/getAllForum")
+	$http.get("http://localhost:8002/SocialNetworkRestApp/getAllForum")
 	.then(function(response)
 	{
 	$scope.forumdata=response.data;
@@ -12,7 +12,7 @@ myapp.controller("ForumController",function($scope,$http)
 	$scope.addForum=function()
 	{
 		console.log('Entered into InsertForum');
-		$http.post('http://localhost:8081/SocialNetworkRestApp/addForum',$scope.Forum)
+		$http.post('http://localhost:8002/SocialNetworkRestApp/addForum',$scope.Forum)
 		.then(function(response)
 				{
 				console.log('Successful Forum Entered');

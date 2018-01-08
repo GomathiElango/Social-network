@@ -5,7 +5,7 @@ myapp.controller("UserController",function($scope,$http,$location)
 	$scope.addUser=function()
 	{
 		//console.log('Entered into InsertBlog');
-		$http.post('http://localhost:8081/SocialNetworkRestApp/addUser',$scope.userDetail)
+		$http.post('http://localhost:8002/SocialNetworkRestApp/addUser',$scope.userDetail)
 		.then(function(response)
 				{
 				console.log('Successful User Entered');
@@ -13,7 +13,7 @@ myapp.controller("UserController",function($scope,$http,$location)
 	}
 	$scope.login=function()
 	{
-		$http.post('http://localhost:8081/SocialNetworkRestApp/login',$scope.UserDetail)
+		$http.post('http://localhost:8002/SocialNetworkRestApp/login',$scope.UserDetail)
 		.then(function(response)
 		{
 			$scope.UserDetail=response.data;
